@@ -18,7 +18,16 @@ class App extends React.Component {
 
   getCharacters(){
     charactersFetch()
-    .then(data => this.setState({characters: data}))
+    .then(data => {
+      // data.map((item,index) => {...item, uuid:index})
+      return(
+        this.setState({characters: data})
+      )
+    })
+  }
+
+  handlerFiltersNama(){
+
   }
 
   render() {
@@ -28,7 +37,10 @@ class App extends React.Component {
           hola
         </header>
         <Switch>
-		      <Route exact path="/" component={Home} />
+		      <Route exact path="/" render={routerProps => (
+            <Home match={routerProps.match} characters={this.state.characters} />
+            )}
+          />
         </Switch>
       </div>
     );

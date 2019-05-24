@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Filters from '../Filters';
+import CharactersList from '../CharactersList';
 
-class Home extends React.Component {
+class Home extends Component {
 
     render() {
         return(
-        <Filters />)
+            <Fragment>
+                <Filters />
+                <CharactersList characters={this.props.characters}/>
+            </Fragment>
+
+        )
 
     }
 }
