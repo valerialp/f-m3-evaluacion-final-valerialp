@@ -9,9 +9,9 @@ class Filters extends Component {
                     type="text" 
                     name="search" 
                     id="search" 
-                    value="" 
+                    value={this.props.nameValue} 
                     placeholder="Harry Potter"
-                    onChange={e => console.log('harry')}
+                    onChange={this.props.onChangeSearch}
                 />
             </Fragment>
         )

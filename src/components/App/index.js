@@ -9,7 +9,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       characters:[],
+      filters:{
+        name:'',
+      }
     }
+
+    this.handlerFiltersName = this.handlerFiltersName.bind(this);
   }
 
   componentDidMount(){
@@ -19,15 +24,20 @@ class App extends React.Component {
   getCharacters(){
     charactersFetch()
     .then(data => {
-      // data.map((item,index) => {...item, uuid:index})
+      data.map((item,index) => {
+        return(
+          {...item, uuid:index + 1}
+        )
+      })
       return(
         this.setState({characters: data})
       )
     })
   }
 
-  handlerFiltersNama(){
-
+  handlerFiltersName(e){
+    const {value} = e.target;
+    this.setState({filters: {name: value}})
   }
 
   render() {
@@ -38,7 +48,12 @@ class App extends React.Component {
         </header>
         <Switch>
 		      <Route exact path="/" render={routerProps => (
-            <Home match={routerProps.match} characters={this.state.characters} />
+            <Home 
+            match={routerProps.match} 
+            characters={this.state.characters}
+            nameValue={this.state.filters.name}
+            onChangeSearch={this.handlerFiltersName}
+             />
             )}
           />
         </Switch>

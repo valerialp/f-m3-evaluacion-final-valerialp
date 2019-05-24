@@ -7,10 +7,14 @@ class CharactersList extends Component{
                 {this.props.characters.map(item => {
                     const{ name, house, image} = item;
                     return(
-                        <li>
-                            <img src={image} alt={name}/>
-                            <h3>{name}</h3>
-                            <p>{house}</p>
+                        <li className="card">
+                            <img 
+                            src={image} 
+                            alt={name}
+                            className="photo-card"
+                            />
+                            <h3 className="name-card">{name}</h3>
+                            <p className="house-card">{house}</p>
                         </li>
                     )
                 })}
