@@ -1,10 +1,12 @@
 import React from 'react';
+import Filters from '../Filters';
 
 class Home extends React.Component {
 
     render() {
         return(
-        <p>hola de home</p>)
+        <Filters />)
+
     }
 }
 export default Home;

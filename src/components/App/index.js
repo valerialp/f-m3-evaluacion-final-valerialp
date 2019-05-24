@@ -29,7 +29,6 @@ class App extends React.Component {
         </header>
         <Switch>
 		      <Route exact path="/" component={Home} />
-		      {/* <Route path="/about" component={Filters} /> */}
         </Switch>
       </div>
     );
