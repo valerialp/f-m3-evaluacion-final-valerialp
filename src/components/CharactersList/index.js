@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
+import CharactersCard from '../CharactersCard';
+import { Link} from 'react-router-dom';
 
 class CharactersList extends Component{
     render(){
         return(
-            <ul>
+            <ul className="card-list">
                 {this.props.characters.map(item => {
-                    const{ name, house, image} = item;
+                    const{ name, house, image, uuid} = item;
                     return(
-                        <li className="card">
-                            <img 
-                            src={image} 
-                            alt={name}
-                            className="photo-card"
+                        <Link to={`/character/${uuid}`}>
+                        <li 
+                        className="card"
+                        onClick={e => console.log('details')} 
+                        key={uuid}
+                        id={uuid}
+                        >
+                            <CharactersCard 
+                                name={name}
+                                house={house}
+                                image={image}
                             />
-                            <h3 className="name-card">{name}</h3>
-                            <p className="house-card">{house}</p>
                         </li>
+                        </Link>
                     )
                 })}
-
             </ul>
         )
     }
