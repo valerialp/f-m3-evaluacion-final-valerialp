@@ -50,7 +50,7 @@ class App extends React.Component {
 		      <Route exact path="/" render={routerProps => (
             <Home 
             match={routerProps.match} 
-            characters={this.state.characters}
+            characters={this.state.characters.filter(item => item.name.includes(this.state.filters.name))}
             nameValue={this.state.filters.name}
             onChangeSearch={this.handlerFiltersName}
              />
