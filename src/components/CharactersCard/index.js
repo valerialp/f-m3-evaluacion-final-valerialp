@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import './styles.scss';
 
 class CharactersCard extends Component{
     render(){

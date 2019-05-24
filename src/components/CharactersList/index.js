@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CharactersCard from '../CharactersCard';
 import { Link} from 'react-router-dom';
+import './styles.scss';
 
 class CharactersList extends Component{
     render(){

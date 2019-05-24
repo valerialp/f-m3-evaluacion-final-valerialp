@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles.scss';
 
 class CharactersDetails extends Component {
     render(){
