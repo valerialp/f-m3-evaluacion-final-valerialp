@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.scss';
+import './styles.scss';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../Home';
 import charactersFetch from '../../services/characters-fetch';
-import CharactersCard from '../CharactersCard/index'
+import CharactersDetails from '../CharactersDetails';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -55,15 +56,15 @@ class App extends React.Component {
         <Switch>
 		      <Route exact path="/" render={routerProps => (
             <Home 
-            match={routerProps.match} 
-            characters={this.state.characters.filter(item => item.name.includes(this.state.filters.name))}
-            nameValue={this.state.filters.name}
-            onChangeSearch={this.handlerFiltersName}
+              match={routerProps.match} 
+              characters={this.state.characters.filter(item => item.name.includes(this.state.filters.name))}
+              nameValue={this.state.filters.name}
+              onChangeSearch={this.handlerFiltersName}
              />
             )}
           />
           <Route path="/character/:id" render={routerProps => (
-            <CharactersCard characters={this.state.characters}/>
+            <CharactersDetails characters={this.state.characters} match={routerProps.match}/>
             )}
           />
         </Switch>

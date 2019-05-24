@@ -11,10 +11,10 @@ class CharactersList extends Component{
                     return(
                         <Link to={`/character/${uuid}`}>
                         <li 
-                        className="card"
-                        onClick={e => console.log('details')} 
-                        key={uuid}
-                        id={uuid}
+                            className="card"
+                            onClick={e => console.log('details')} 
+                            key={uuid}
+                            id={uuid}
                         >
                             <CharactersCard 
                                 name={name}
