@@ -76,10 +76,10 @@ class App extends Component {
     return (
       <div className={`App-${this.state.filters.theme}`}>
         <header className="App-header">
-          <img
-            src="https://fontmeme.com/permalink/190524/c189e512a1a7e50707210d0a0aefa070.png"
-            alt="fuente-de-harry-potter"
-          />
+        <img 
+          src="https://fontmeme.com/permalink/190525/371cca28f1c19aee75f3472b7891f62b.png" 
+          alt="harry potter" 
+        />
         </header>
         <Switch>
           <Route
