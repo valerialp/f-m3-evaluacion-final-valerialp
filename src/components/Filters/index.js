@@ -1,10 +1,13 @@
-import React, { Component, Fragment}  from 'react';
+import React, { Component }  from 'react';
 import './styles.scss';
+import Houses from '../Houses';
+import Theme from '../Theme';
+
 
 class Filters extends Component {
     render(){
         return(
-            <Fragment>
+            <form>
                 <label htmlFor="search" className="title-seeker">Búsqueda</label>
                 <input 
                     className="seeker"
@@ -15,7 +18,15 @@ class Filters extends Component {
                     placeholder="Harry Potter"
                     onChange={this.props.onChangeSearch}
                 />
-            </Fragment>
+                <fieldset>
+                    <legend>Choose a house</legend>
+                    <Houses />
+                </fieldset>
+                <fieldset>
+                    <legend>Choose a theme</legend>
+                    <Theme />
+                </fieldset>
+            </form>
         )
     }
 }
