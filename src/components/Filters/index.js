@@ -6,6 +6,7 @@ import Theme from '../Theme';
 
 class Filters extends Component {
     render(){
+        const {nameValue, onChangeSearch, onClickTheme, themeValue, onClickHouse, houses} = this.props;
         return(
             <form>
                 <label htmlFor="search" className="title-seeker">Búsqueda</label>
@@ -14,17 +15,17 @@ class Filters extends Component {
                     type="text" 
                     name="seeker" 
                     id="seeker" 
-                    value={this.props.nameValue} 
+                    value={nameValue} 
                     placeholder="Harry Potter"
-                    onChange={this.props.onChangeSearch}
+                    onChange={onChangeSearch}
                 />
                 <fieldset>
                     <legend>Choose a house</legend>
-                    <Houses />
+                    <Houses onClickHouse={onClickHouse} houses={houses}/>
                 </fieldset>
                 <fieldset>
                     <legend>Choose a theme</legend>
-                    <Theme />
+                    <Theme onClickTheme={onClickTheme} themeValue={themeValue}/>
                 </fieldset>
             </form>
         )

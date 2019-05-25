@@ -1,5 +1,13 @@
-.App{
+.App-dark{
     background-image: url(../../images/a8ff26868209e9ef468b559247330274.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow: scroll;
+}
+.App-light{
+    background: red;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -3,47 +3,48 @@ import "./styles.scss";
 
 class Houses extends Component {
   render() {
+    const {houses, onClickHouse} = this.props;
     return (
       <Fragment>
-        <label hhtmlFor="Gryffindor">Gryffindor</label>
+        <label htmlFor="Gryffindor">Gryffindor</label>
         <input
           type="checkbox"
           className="gryffindor"
-          value="gryffindor"
+          value="Gryffindor"
           name="Gryffindor"
           id="Gryffindor"
-          onClick={e => console.log('hola')}
-        //   checked={}
+          onClick={onClickHouse}
+          checked={houses.includes('Gryffindor')}
         />
-        <label hhtmlFor="Slytherin">Slytherin</label>
+        <label htmlFor="Slytherin">Slytherin</label>
         <input
           type="checkbox"
           className="slytherin"
-          value="slytherin"
+          value="Slytherin"
           name="Slytherin"
           id="Slytherin"
-          onClick={e => console.log('hola')}
-        //   checked={}
+          onClick={onClickHouse}
+          checked={houses.includes('Slytherin')}
         />
-        <label hhtmlFor="Ravenclaw">Ravenclaw</label>
+        <label htmlFor="Ravenclaw">Ravenclaw</label>
         <input
           type="checkbox"
           className="ravenclaw"
-          value="ravenclaw"
+          value="Ravenclaw"
           name="Ravenclaw"
           id="Ravenclaw"
-          onClick={e => console.log('hola')}
-        //   checked={}
+          onClick={onClickHouse}
+          checked={houses.includes('Ravenclaw')}
         />
-        <label hhtmlFor="Hufflepuff">Hufflepuff</label>
+        <label htmlFor="Hufflepuff">Hufflepuff</label>
         <input
           type="checkbox"
           className="hufflepuff"
-          value="hufflepuff"
+          value="Hufflepuff"
           name="Hufflepuff"
           id="Hufflepuff"
-          onClick={e => console.log('hola')}
-        //   checked={}
+          onClick={onClickHouse}
+          checked={houses.includes('Hufflepuff')}
         />
       </Fragment>
     );

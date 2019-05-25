@@ -2,11 +2,11 @@ import React, { Component, Fragment } from 'react';
 
 class Input extends Component{
     render(){
-        const {type, id, value} =this.props;
+        const {type, id, value,style, onClickTheme, themeValue} =this.props;
         return(
             <Fragment>
-                <label hhtmlFor={id}>{value}</label>
-                <input type={type} className="" value={value} name="" id={id} />
+                <label htmlFor={id}>{value}</label>
+                <input type={type} className={style} value={value} name="" id={id} onClick={onClickTheme} checked={themeValue === value} />
             </Fragment>
         )
     }

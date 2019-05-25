@@ -14,12 +14,14 @@ class App extends Component {
       filters:{
         name:'',
         houses: [],
-        theme:'',
+        theme:'dark',
       }
 
     }
 
     this.handlerFiltersName = this.handlerFiltersName.bind(this);
+    this.handlerClickTheme = this.handlerClickTheme.bind(this);
+    this.handlerClickHouse = this.handlerClickHouse.bind(this);
   }
 
   componentDidMount(){
@@ -44,22 +46,45 @@ class App extends Component {
 
   handlerFiltersName(e){
     const {value} = e.target;
-    this.setState({filters: {name: value}})
+    this.setState(prevState => {
+      return {filters: 
+        {...prevState.filters,
+        name: value}
+      }
+    })
   }
 
   handlerClickHouse(e){
     const { value } = e.currentTarget;
+  
     this.setState(prevState =>{
-      return{checkbox: prevState.checkbox.find(item => item === value)
-     ? prevState.checkbox.filter(item => item !== value)
-     : prevState.checkbox.concat(value)
+      return{filters:{
+        ...prevState.filters,
+        houses: prevState.filters.houses.find(item => item === value)
+       ? prevState.filters.houses.filter(item => item !== value)
+       : prevState.filters.houses.concat(value)
+
+      } 
       } 
    })
   }
 
+  handlerClickTheme(e){
+    const {value} = e.currentTarget;
+    console.log(value)
+    this.setState(prevState => {
+      return {
+        filters:{
+          ...prevState.filters,
+          theme:value,
+        }
+      }
+    })
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className={`App-${this.state.filters.theme}`}>
         <header className="App-header">
         <img 
           src="https://fontmeme.com/permalink/190524/c189e512a1a7e50707210d0a0aefa070.png" 
@@ -70,9 +95,15 @@ class App extends Component {
 		      <Route exact path="/" render={routerProps => (
             <Home 
               match={routerProps.match} 
-              characters={this.state.characters.filter(item => item.name.toUpperCase().includes(this.state.filters.name.toUpperCase()))}
+              characters={this.state.characters
+                .filter(item => item.name.toUpperCase().includes(this.state.filters.name.toUpperCase()))
+                .filter(item => !this.state.filters.houses.length || this.state.filters.houses.includes(item.house) )}
               nameValue={this.state.filters.name}
               onChangeSearch={this.handlerFiltersName}
+              themeValue={this.state.filters.theme}
+              onClickTheme={this.handlerClickTheme}
+              onClickHouse={this.handlerClickHouse}
+              houses={this.state.filters.houses}
              />
             )}
           />
