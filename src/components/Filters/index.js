@@ -43,12 +43,6 @@ class Filters extends Component {
             </section>
           </div>
           <div className="theme-form">
-            <button type="button" className="btn btn-theme">
-              <i className="fas fa-broom"> </i>
-            </button>
-            <section className="section-theme">
-              <Theme onClickTheme={onClickTheme} themeValue={themeValue} />
-            </section>
           </div>
       </form>
     );

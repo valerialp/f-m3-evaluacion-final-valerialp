@@ -14,11 +14,14 @@ class App extends Component {
         name: "",
         houses: [],
         alive: [],
+      },
+      colapsables: {
+        seekker: true,
+        houses:[],
       }
     };
 
     this.handlerFiltersName = this.handlerFiltersName.bind(this);
-    this.handlerClickAlive = this.handlerClickAlive.bind(this);
     this.handlerClickHouse = this.handlerClickHouse.bind(this);
   }
 
@@ -59,19 +62,6 @@ class App extends Component {
     });
   }
 
-  handlerClickAlive(e) {
-    const { value } = e.currentTarget;
-    console.log(value);
-    this.setState(prevState => {
-      return {
-        filters: {
-          ...prevState.filters,
-          alive: value
-        }
-      };
-    });
-  }
-
   render() {
     return (
       <div className={'App'}>
@@ -101,8 +91,6 @@ class App extends Component {
                   )}
                 nameValue={this.state.filters.name}
                 onChangeSearch={this.handlerFiltersName}
-                themeValue={this.state.filters.theme}
-                onClickTheme={this.handlerClickTheme}
                 onClickHouse={this.handlerClickHouse}
                 houses={this.state.filters.houses}
               />

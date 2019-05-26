@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 class CharactersDetails extends Component {
   render() {
-    const person = this.props.characters.filter(
+    const person = this.props.characters.find(
       item => item.uuid === parseInt(this.props.match.params.id)
     );
-    const { image, name, house, dateOfBirth, patronus, alive } = person[0];
+    const { image, name, house, dateOfBirth, patronus, alive } = person;
 
     return (
       <Fragment>
-        <Link to="/">Volver</Link>
-        <div className="card__details">
+        <Link to="/">Back muggle</Link>
+        <article className="card__details">
           <img src={image} alt={name} className="card__details-photo" />
           <div className="card__details-info">
             <h3 className="card__details-name">{name}</h3>
@@ -23,7 +23,7 @@ class CharactersDetails extends Component {
               Estado: {alive ? "Vivo" : "Muertisimo"}
             </p>
           </div>
-        </div>
+        </article>
       </Fragment>
     );
   }
