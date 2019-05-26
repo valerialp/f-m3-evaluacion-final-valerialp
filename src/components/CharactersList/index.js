@@ -10,16 +10,16 @@ class CharactersList extends Component {
       <ul className="card-list">
         {characters.length ? (
           characters.map(item => {
-            const { name, house, image, uuid } = item;
+            const { name, house, image, uuid, alive } = item;
             return (
-              <Link to={`/character/${uuid}`}>
+              <Link to={`/character/${uuid}`} key={uuid}>
                 <li
                   className="card"
                   onClick={e => console.log("details")}
                   key={uuid}
                   id={uuid}
                 >
-                  <CharactersCard name={name} house={house} image={image} />
+                  <CharactersCard name={name} house={house} alive={alive} image={image} />
                 </li>
               </Link>
             );

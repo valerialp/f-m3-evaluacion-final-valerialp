@@ -13,12 +13,12 @@ class App extends Component {
       filters: {
         name: "",
         houses: [],
-        theme: "dark"
+        alive: [],
       }
     };
 
     this.handlerFiltersName = this.handlerFiltersName.bind(this);
-    this.handlerClickTheme = this.handlerClickTheme.bind(this);
+    this.handlerClickAlive = this.handlerClickAlive.bind(this);
     this.handlerClickHouse = this.handlerClickHouse.bind(this);
   }
 
@@ -59,14 +59,14 @@ class App extends Component {
     });
   }
 
-  handlerClickTheme(e) {
+  handlerClickAlive(e) {
     const { value } = e.currentTarget;
     console.log(value);
     this.setState(prevState => {
       return {
         filters: {
           ...prevState.filters,
-          theme: value
+          alive: value
         }
       };
     });
@@ -74,7 +74,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className={`App-${this.state.filters.theme}`}>
+      <div className={'App'}>
         <header className="App-header">
         <img 
           src="https://fontmeme.com/permalink/190525/371cca28f1c19aee75f3472b7891f62b.png" 

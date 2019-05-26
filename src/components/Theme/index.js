@@ -6,8 +6,8 @@ class Theme extends Component {
     const {onClickTheme,themeValue} = this.props;
     return (
       <Fragment>
-        <Input type="radio" id="theme" value="dark" styles="theme dark" onClickTheme={onClickTheme} themeValue={themeValue}/>
-        <Input type="radio" id="theme" value="light" styles="theme light" onClickTheme={onClickTheme} themeValue={themeValue}/>
+        <Input type="radio" id="theme" value={true} onClickTheme={onClickTheme} themeValue={themeValue}/>
+        <Input type="radio" id="theme" value={false} onClickTheme={onClickTheme} themeValue={themeValue}/>
       </Fragment>
     );
   }

@@ -1,21 +1,24 @@
-.photo-card{
-    width: 250px;
-    height: 300px;
+.card-photo{
+    width: 200px;
+    height: 250px;
+    margin-top: 20px;
 }
-.emblem-card{
+.card-emblem{
     width: 60px;
     height: 60px;
 }
-.info-card{
+.card-info{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 20px;
+    margin: 20px 22px;
     align-items: baseline;
+    min-height: 44px;
 }
-.name-card{
-    margin: 0;
+.card-name{
+    margin: 0 20px 0 0;
+    text-align: left;
 }
-.house-card{
+.card-alive{
     margin: 0;
 }

@@ -13,13 +13,13 @@ class CharactersDetails extends Component {
       <Fragment>
         <Link to="/">Volver</Link>
         <div className="card__details">
-          <img src={image} alt={name} className="photo-card__details" />
-          <div className="info-card__details">
-            <h3 className="name-card__details">{name}</h3>
-            <p className="house-card__details">Casa: {house}</p>
-            <p className="birthday-card__details">Nacimiento: {dateOfBirth}</p>
-            <p className="patronus-card__details">Patronus: {patronus}</p>
-            <p className="alive-card__details">
+          <img src={image} alt={name} className="card__details-photo" />
+          <div className="card__details-info">
+            <h3 className="card__details-name">{name}</h3>
+            <p className="card__details-house">Casa: {house}</p>
+            <p className="card__details-birthday">Nacimiento: {dateOfBirth}</p>
+            <p className="card__details-patronus">Patronus: {patronus}</p>
+            <p className="card__details-alive">
               Estado: {alive ? "Vivo" : "Muertisimo"}
             </p>
           </div>
