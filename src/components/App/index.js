@@ -61,17 +61,7 @@ class App extends React.Component {
             render={routerProps => (
               <Home
                 match={routerProps.match}
-                characters={this.state.characters
-                  .filter(item =>
-                    item.name
-                      .toUpperCase()
-                      .includes(this.state.filters.name.toUpperCase())
-                  )
-                  .filter(
-                    item =>
-                      !this.state.filters.houses.length ||
-                      this.state.filters.houses.includes(item.house)
-                  )}
+                characters={this.state.characters.filter(item => item.name.toUpperCase().includes(this.state.filters.name.toUpperCase()))}
                 nameValue={this.state.filters.name}
                 onChangeSearch={this.handlerFiltersName}
                 onClickHouse={this.handlerClickHouse}
