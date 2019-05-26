@@ -5,14 +5,21 @@ import CharactersList from '../CharactersList';
 class Home extends Component {
 
     render() {
-        return(
-            <Fragment>
-                <Filters nameValue={this.props.nameValue} onChangeSearch={this.props.onChangeSearch}/>
-                <CharactersList characters={this.props.characters}/>
-            </Fragment>
-
-        )
-
-    }
+        const {
+          nameValue,
+          onChangeSearch,
+          characters,
+        } = this.props;
+        return (
+          <Fragment>
+            <Filters
+              nameValue={nameValue}
+              onChangeSearch={onChangeSearch}
+            />
+            <CharactersList characters={characters} />
+          </Fragment>
+        );
+      }
+    
 }
 export default Home;
