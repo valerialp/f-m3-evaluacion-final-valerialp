@@ -47,24 +47,45 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={'App'}>
         <header className="App-header">
         <img 
-          src="https://fontmeme.com/permalink/190524/c189e512a1a7e50707210d0a0aefa070.png" alt="fuente-de-harry-potter" 
+          src="https://fontmeme.com/permalink/190525/371cca28f1c19aee75f3472b7891f62b.png" 
+          alt="harry potter" 
         />
         </header>
         <Switch>
-		      <Route exact path="/" render={routerProps => (
-            <Home 
-              match={routerProps.match} 
-              characters={this.state.characters.filter(item => item.name.includes(this.state.filters.name))}
-              nameValue={this.state.filters.name}
-              onChangeSearch={this.handlerFiltersName}
-             />
+          <Route
+            exact
+            path="/"
+            render={routerProps => (
+              <Home
+                match={routerProps.match}
+                characters={this.state.characters
+                  .filter(item =>
+                    item.name
+                      .toUpperCase()
+                      .includes(this.state.filters.name.toUpperCase())
+                  )
+                  .filter(
+                    item =>
+                      !this.state.filters.houses.length ||
+                      this.state.filters.houses.includes(item.house)
+                  )}
+                nameValue={this.state.filters.name}
+                onChangeSearch={this.handlerFiltersName}
+                onClickHouse={this.handlerClickHouse}
+                houses={this.state.filters.houses}
+              />
             )}
           />
-          <Route path="/character/:id" render={routerProps => (
-            <CharactersDetails characters={this.state.characters} match={routerProps.match}/>
+          <Route
+            path="/character/:id"
+            render={routerProps => (
+              <CharactersDetails
+                characters={this.state.characters}
+                match={routerProps.match}
+              />
             )}
           />
         </Switch>
