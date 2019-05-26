@@ -1,8 +1,25 @@
-.title-seeker{
+.main-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn{
+    background-color: transparent;
+    border:none;
+    color: rgb(189, 189, 0);
+}
+.sub__title-seeker{
     visibility: hidden;
 }
 .seeker{
+    max-height: 15px;
     padding: 5px;
     border-radius: 20px;
     border: 2px solid rgb(109, 109, 109);
+}
+.seeker-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }

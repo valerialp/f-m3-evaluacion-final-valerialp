@@ -1,10 +1,32 @@
 .card-list{
     display: grid;
-    grid-template-columns: 250px 250px 250px;
-    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin: 15px;
+
+    @media all and (min-width:768px){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media all and (min-width:1000px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media all and (min-width: 1200px){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 .card{
-    background-color: black;
+    border-radius: 5%;
+    width: 250px;
+    height: 400px;
+    background-color: rgba(114, 112, 112, 0.616);
     color:white;
     text-align: center;
+    margin: 0 auto 10px;
+
+	transition: all ease 600ms;
+	&:hover {
+		transform: scale(1.05);
+	}
 }

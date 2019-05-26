@@ -1,4 +1,24 @@
-.photo-card{
-    width: 150px;
-    height: 200px;
+.card-photo{
+    width: 200px;
+    height: 250px;
+    margin-top: 20px;
+}
+.card-emblem{
+    width: 60px;
+    height: 60px;
+}
+.card-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 22px;
+    align-items: baseline;
+    min-height: 44px;
+}
+.card-name{
+    margin: 0 20px 0 0;
+    text-align: left;
+}
+.card-alive{
+    margin: 0;
 }
