@@ -12,7 +12,9 @@ class CharactersDetails extends Component {
     
         return (
           <Fragment>
-            <Link to="/">Back muggle</Link>
+            <Link to="/">
+              <p className="back">Back muggle</p>
+            </Link>
             <article className="card__details">
               <img src={image} alt={name} className="card__details-photo" />
               <div className="card__details-info">
