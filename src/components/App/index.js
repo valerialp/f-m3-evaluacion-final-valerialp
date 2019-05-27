@@ -13,7 +13,8 @@ class App extends React.Component {
       characters:[],
       filters:{
         name:'',
-      }
+      },
+      isLoading: true,
     }
 
     this.handlerFiltersName = this.handlerFiltersName.bind(this);
@@ -35,7 +36,7 @@ class App extends React.Component {
       })
       
       return(
-        this.setState({characters: newData})
+        this.setState({characters: newData, isLoading:false})
       )
     })
   }
@@ -73,6 +74,7 @@ class App extends React.Component {
             path="/character/:id"
             render={routerProps => (
               <CharactersDetails
+                loading={this.state.isLoading}
                 characters={this.state.characters}
                 match={routerProps.match}
               />
