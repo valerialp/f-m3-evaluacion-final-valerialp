@@ -15,9 +15,6 @@ class Filters extends Component {
               <i className="fas fa-search"> </i>
             </button>
             <section className="title-seeker">
-              <label htmlFor="search" className="sub__title-seeker">
-                Búsqueda
-              </label>
               <input
                 className="seeker"
                 type="text"
@@ -27,6 +24,9 @@ class Filters extends Component {
                 placeholder="Harry Potter"
                 onChange={onChangeSearch}
               />
+              <label htmlFor="search" className="sub__title-seeker">
+                Búsqueda
+              </label>
             </section>
           </div>
       </form>

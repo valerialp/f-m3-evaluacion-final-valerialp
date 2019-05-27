@@ -27,7 +27,7 @@ class CharactersCard extends Component{
             <img src={image} alt={name} className="card-photo" />
             <div className="card-info">
               <h3 className="card-name">{name}</h3>
-              <i class={alive ? '' : "far fa-dizzy"}> </i>
+              <i className={alive ? '' : "far fa-dizzy"}> </i>
               <p className="card-alive">{alive ? 'Vivo' : 'Muerto'}</p>
             </div>
             <img src={emblem} alt={house} className="card-emblem" />
