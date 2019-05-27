@@ -8,14 +8,16 @@ class Filters extends Component {
     const {
       nameValue,
       onChangeSearch,
+      onClickColapsable,
+      open,
     } = this.props;
     return (
       <form className="main-form">
           <div className="seeker-form">
-            <button type="button" className="btn btn-seeker">
+            <button type="button" onClick={onClickColapsable} className="btn btn-seeker">
               <i className="fas fa-search"> </i>
             </button>
-            <section className="title-seeker">
+            <section className={open ? "title-seeker" : "hidden"}>
               <input
                 className="seeker"
                 type="text"

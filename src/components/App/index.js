@@ -15,9 +15,11 @@ class App extends React.Component {
         name:'',
       },
       isLoading: true,
+      open: false,
     }
 
     this.handlerFiltersName = this.handlerFiltersName.bind(this);
+    this.handlerClickColapsable = this.handlerClickColapsable.bind(this);
   }
 
   componentDidMount(){
@@ -38,6 +40,11 @@ class App extends React.Component {
       return(
         this.setState({characters: newData, isLoading:false})
       )
+    })
+  }
+  handlerClickColapsable(){
+    this.setState(prevState =>{
+      return{open: !prevState.open}
     })
   }
 
@@ -65,8 +72,8 @@ class App extends React.Component {
                 characters={this.state.characters.filter(item => item.name.toUpperCase().includes(this.state.filters.name.toUpperCase()))}
                 nameValue={this.state.filters.name}
                 onChangeSearch={this.handlerFiltersName}
-                onClickHouse={this.handlerClickHouse}
-                houses={this.state.filters.houses}
+                onClickColapsable={this.handlerClickColapsable}
+                open={this.state.open}
               />
             )}
           />

@@ -10,12 +10,16 @@ class Home extends Component {
           nameValue,
           onChangeSearch,
           characters,
+          onClickColapsable,
+          open,
         } = this.props;
         return (
           <Fragment>
             <Filters
               nameValue={nameValue}
               onChangeSearch={onChangeSearch}
+              onClickColapsable={onClickColapsable}
+              open={open}
             />
             <CharactersList characters={characters} />
           </Fragment>
