@@ -5,6 +5,7 @@ import Slytherin from "../../images/Slytherin.png";
 import Ravenclaw from "../../images/Ravenclaw.png";
 import Hufflepuff from "../../images/Hufflepuff.png";
 import Hogwarts from "../../images/Hogwarts.png";
+import PropTypes from 'prop-types';
 
 
 class CharactersCard extends Component{
@@ -35,5 +36,12 @@ class CharactersCard extends Component{
         );
       }
 }
+
+CharactersCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  house: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  alive:PropTypes.bool.isRequired,
+};
 
 export default CharactersCard;

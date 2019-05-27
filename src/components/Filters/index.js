@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./styles.scss";
+import PropTypes from 'prop-types';
 
 class Filters extends Component {
   
@@ -33,5 +34,10 @@ class Filters extends Component {
     );
   }
 }
+
+Filters.propTypes = {
+  nameValue: PropTypes.string.isRequired,
+  onChangeSearch: PropTypes.func.isRequired,
+};
 
 export default Filters;

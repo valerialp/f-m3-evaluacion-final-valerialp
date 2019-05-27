@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './styles.scss';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 class CharactersDetails extends Component {
     render() {
@@ -32,5 +32,9 @@ class CharactersDetails extends Component {
       }
     
 }
+
+CharactersDetails.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default CharactersDetails;

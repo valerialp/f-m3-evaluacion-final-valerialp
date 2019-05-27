@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CharactersCard from "../CharactersCard";
 import { Link } from "react-router-dom";
 import "./styles.scss";
+import PropTypes from 'prop-types';
 
 class CharactersList extends Component {
   render() {
@@ -15,7 +16,6 @@ class CharactersList extends Component {
               <Link to={`/character/${uuid}`} key={uuid}>
                 <li
                   className="card"
-                  onClick={e => console.log("details")}
                   key={uuid}
                   id={uuid}
                 >
@@ -36,5 +36,9 @@ class CharactersList extends Component {
     );
   }
 }
+
+CharactersList.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default CharactersList;
